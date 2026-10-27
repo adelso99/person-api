@@ -1,0 +1,17 @@
+CREATE DATABASE person_db;
+GO
+
+USE person_db;
+GO
+
+CREATE TABLE person (
+    person_id INT IDENTITY(1,1) PRIMARY KEY,
+    names VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    active BIT NOT NULL DEFAULT 1,
+    created_at DATETIME2 NOT NULL DEFAULT GETDATE(),
+    updated_at DATETIME2 NOT NULL DEFAULT GETDATE()
+);
+GO
+
+SELECT * FROM person;
